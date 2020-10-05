@@ -33,7 +33,7 @@ sudo yum install wireshark wireshark-qt
 
 (overview of tool)
 
-#### Installing tShark
+#### Installing TShark
 Windows: (Requires choclatey to be installed) `choco install wireshark`
 
 macOS: (Requires brew to be installed) `brew cask install wireshark`
@@ -41,6 +41,10 @@ macOS: (Requires brew to be installed) `brew cask install wireshark`
 Linux: By default it is included when installing wireshark. Refer to the wireshark installation steps for your respective distro.
 
 ### Topics Covered:
+1. TCP/IP packet structure. An Overview/Introduction to Wireshark.
+2. Basic Packet Analysis in Wireshark.
+3. Advanced Packet Analysis in Wireshark.
+4. An Overview/Introduction to TShark.
 
 ### Overview:
 
