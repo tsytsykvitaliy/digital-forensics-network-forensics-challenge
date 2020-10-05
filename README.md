@@ -1,5 +1,5 @@
 # Digital Forensics Network Forensics Challenge
-## Created by: Tom Danner, Devin Ingresoll, Jesse Reed, Vitaliy Tsytsk
+## Created by: Tom Danner, Devin Ingresoll, Jesse Reed, Vitaliy Tsytsyk
 
 ### Software/Tools used:
 
