@@ -56,20 +56,20 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 
 
 
-### First section
+### TCP/IP packet structure and An Overview/Introduction to Wireshark
 
 
 
 
-### Second section
+### Basic Packet Analysis in Wireshark
 
 
 
-### Third section
+### Advanced Packet Analysis in Wireshark
 
 
 
-### Fourth section
+### An Overview/Introduction to TShark
 
 
 
