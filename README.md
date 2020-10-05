@@ -6,6 +6,8 @@
   <img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/main/Wireshark_Logo.png" width="800" height="221" />
 </p>
 
+#### Overview
+
 Wireshark is a tool used for capturing/sniffing packets and analyzing packet captures.
 
 #### Installing Wireshark
@@ -31,14 +33,16 @@ sudo yum install wireshark wireshark-qt
   <img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/main/tshark_logo.png">
 </p>
 
-tShark is the CLI counterpart of Wireshark. It enables the user to perform many of the same tasks they can do in wireshark through the CLI instead. It also allows users to create scripts to automate the packet capture analysis process.
+#### Overview
+
+TShark is the CLI counterpart of Wireshark. It enables the user to perform many of the same tasks they can do in Wireshark through the CLI instead. It also allows users to create scripts to automate the packet capture analysis process.
 
 #### Installing TShark
 Windows: (Requires choclatey to be installed) `choco install wireshark`
 
 macOS: (Requires brew to be installed) `brew cask install wireshark`
 
-Linux: By default it is included when installing wireshark. Refer to the wireshark installation steps for your respective distro.
+Linux: By default it is included when installing Wireshark. Refer to the Wireshark installation steps for your respective distro.
 
 ### Topics Covered:
 1. TCP/IP packet structure. An Overview/Introduction to Wireshark.
