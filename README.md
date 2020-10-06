@@ -51,8 +51,14 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 4. An Overview/Introduction to TShark.
 
 ### Overview:
-
-
+Network Forensics is a crucial part of digital forensics and its importance continues to grow everyday.
+Almost all personal computers and servers are going to have builtin networking capabilities such as wifi or ethernet allowing to commuticate with other devices or the internet.                                                                                                              
+These connections can be used to transfer illegal files, deny normal service, and allow malware to go become viral.                                                                                                                                                           
+Network data can also be difficult to track due to the large volume and voliticity of the conversations.                                                                                                                                                                      
+Usually networking data has to be deliberatly listened to and saved for analysis in order to extract evidence.                                                                                                                                                                
+In our overview of network forensics, we will first cover the most common language that computers communicate with, the TCP/IP packet structure.                                                                                                                              
+After we learn how to read these, we will dive into how to aquire and analyse network information with one of the most common tools in the field: Wireshark!                                                                                                                  
+Once we have the basics down, we'll take a look at some more advanced topics dealing with Wireshark and tshark.
 
 
 
