@@ -52,13 +52,15 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 
 ### Overview:
 Network Forensics is a crucial part of digital forensics and its importance continues to grow everyday.
-Almost all personal computers and servers are going to have builtin networking capabilities such as wifi or ethernet allowing to commuticate with other devices or the internet.                                                                                                              
-These connections can be used to transfer illegal files, deny normal service, and allow malware to go become viral.                                                                                                                                                           
-Network data can also be difficult to track due to the large volume and voliticity of the conversations.                                                                                                                                                                      
-Usually networking data has to be deliberatly listened to and saved for analysis in order to extract evidence.                                                                                                                                                                
-In our overview of network forensics, we will first cover the most common language that computers communicate with, the TCP/IP packet structure.                                                                                                                              
-After we learn how to read these, we will dive into how to aquire and analyse network information with one of the most common tools in the field: Wireshark!                                                                                                                  
-Once we have the basics down, we'll take a look at some more advanced topics dealing with Wireshark and tshark.
+Almost all personal computers and servers are going to have built-in networking capabilities, such as wi-fi or ethernet, allowing them to communicate with other devices across the internet.
+These connections can be used to transfer illegal files, deny normal service, and allow malware to go on and become viral.                                                                                                                                                           
+
+Network data can also be difficult to track due to the huge volume and voliticity of conversations between devices.                                                                                                                                                                      
+As a result of this, networking data has to be deliberatly listened to and saved for analysis in order to extract evidence. This is called "sniffing."                                                                                                                                                                
+
+In our overview of network forensics we will first cover the most common language that computers communicate with: the TCP/IP packet structure.                                                                                                                              
+After we learn how to read these, we'll dive into how you can aquire and analyse network information with one of the most common tools in the field: Wireshark!                                                                                                                  
+Once we have the basics down, we'll lastly take a look at some more advanced topics dealing with Wireshark and TShark.
 
 
 
