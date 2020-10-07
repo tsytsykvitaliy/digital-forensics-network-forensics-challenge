@@ -75,7 +75,8 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 Packets (also referred to as frames) contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
 
-![](DNS_listing.png)
+![](DNS_listing.png)  
+_Screenshot of the Packet Listing window_  
 
 We will be analyzing packet #3.
 Just by looking at all the columns that correspond to our packet (row), we can gather the following information:
@@ -101,9 +102,10 @@ This is the easiest way to see the most common information about the packets. Ho
 
 Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section so it will be easier to analyze our specific DNS packet, knowing that information. We will start from the top of the list with the physical layer, and work our way to the bottom - the "highest" protocol.
 
-![](physical.png)
+![](physical.png)  
+_Screenshot of the physical layer information we have about the DNS packet._  
 
-This is a screenshot of the physical layer information we have about our DNS packet. There is plenty of rows to look at and there are plenty of resources that break them all down, but we are just going to look at most important information:
+There is plenty of rows to look at and there are plenty of resources that break them all down, but we are just going to look at most important information:
 
 - **Arrival Time**: Feb 3, 2010 16:26:52.129870000 Central Standard Time  
 _Time of the packet arrival at the destination_
@@ -113,6 +115,22 @@ _Also called UNIX time, this is a number of seconds since January 1, 1970_
 _Packet number in this capture_
 - **Frame Length**: 86 bytes (688 bits)  
 _Packet length_
+
+![](data-link.png)  
+_Screenshot of the data link layer information we have about the DNS packet._  
+
+
+![](network.png)  
+_Screenshot of the network layer information we have about the DNS packet._  
+
+
+![](transport.png)  
+_Screenshot of the transport layer information we have about the DNS packet._  
+
+
+![](dns.png)  
+_Screenshot of the application layer information we have about the DNS packet._  
+
 
 ## Advanced Packet Analysis in Wireshark
 
