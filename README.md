@@ -102,6 +102,8 @@ This is the easiest way to see the most common information about the packets. Ho
 
 Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section so it will be easier to analyze our specific DNS packet, knowing that information. We will start from the top of the list with the physical layer, and work our way to the bottom - the "highest" protocol.
 
+#### Physical Layer
+
 ![](physical.png)  
 _Screenshot of the physical layer information we have about the DNS packet._  
 
@@ -116,17 +118,29 @@ _Packet number in this capture_
 - **Frame Length**: 86 bytes (688 bits)  
 _Packet length_
 
+
+#### Data Link Layer
+
 ![](data-link.png)  
 _Screenshot of the data link layer information we have about the DNS packet._  
 
+
+
+#### Network Layer
 
 ![](network.png)  
 _Screenshot of the network layer information we have about the DNS packet._  
 
 
+
+#### Transport Layer
+
 ![](transport.png)  
 _Screenshot of the transport layer information we have about the DNS packet._  
 
+
+
+#### Application Layer
 
 ![](dns.png)  
 _Screenshot of the application layer information we have about the DNS packet._  
