@@ -73,7 +73,7 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 ### The Tip of The Iceberg
 
-Packets contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
+Packets (also referred to as frames) contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
 
 ![](DNS_listing.png)
 
