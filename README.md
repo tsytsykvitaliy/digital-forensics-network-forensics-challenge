@@ -50,7 +50,7 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 3. Advanced Packet Analysis in Wireshark.
 4. An Overview/Introduction to TShark.
 
-### Overview:
+## Overview:
 Network Forensics is a crucial part of digital forensics and its importance continues to grow everyday.
 Almost all personal computers and servers are going to have built-in networking capabilities, such as wi-fi or ethernet, allowing them to communicate with other devices across the internet.
 These connections can be used to transfer illegal files, deny normal service, and allow malware to go on and become viral.                                                                                                                                                           
@@ -64,20 +64,54 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 
-### TCP/IP packet structure and An Overview/Introduction to Wireshark
+## TCP/IP packet structure and An Overview/Introduction to Wireshark
+### Opening a Packet
+So before we dive deep into Wireshark, we first need to understand what we will be looking at.  
+This all starts with understanding the IP packet structure\!  
+When we look at network traffic we will often be looking at TCP/IP packets so this is where we will start.  
+ 
+![](telnet.png)
+
+*This is what a packet looks like in Wireshark.*
+We can see the HEX and Ascii text on the right side and what this translates to on the left.    
+ 
+Almost all packets can be understood using the seven layers of the OSI / networking model:  
+
+- **Physical Layer**        
+_Includes information about the packet as a whole_   
+  - Arrival Time  
+  - Encapsulation type (usually Ethernet)      
+  - Frame number and length  
+  - Protocol inside          
+- **Data Link layer**  
+_Transferring from device <-> device_
+  - Destination and Source MAC address        
+- **Network Layer**  
+_Usually over IPv4 or IPv6_  
+_client <-> host_         
+  - IP addresses of client and server
+  - IP version
+  - Time to live
+- **Transport Layer**  
+_Usually either TCP or UDP_
+  - Source and Destination Port number
+  - Sequence number
+- **Session/Application Layer (_the rest of it_)**  
+_The actual protocol data_
+  - depends on which protocol is used
+  - in our example, Telnet includes data such as a **password** being sent in plain text!!!
 
 
 
-
-### Basic Packet Analysis in Wireshark
-
-
-
-### Advanced Packet Analysis in Wireshark
+## Basic Packet Analysis in Wireshark
 
 
 
-### An Overview/Introduction to TShark
+## Advanced Packet Analysis in Wireshark
+
+
+
+## An Overview/Introduction to TShark
 TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
 
 `tshark -i wlan0 -w captureOutput.pcap`
