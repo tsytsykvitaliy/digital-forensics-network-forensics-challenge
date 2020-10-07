@@ -103,6 +103,17 @@ Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we w
 
 ![](physical.png)
 
+This is a screenshot of the physical layer information we have about our DNS packet. There is plenty of rows to look at and there are plenty of resources that break them all down, but we are just going to look at most important information:
+
+- **Arrival Time**: Feb 3, 2010 16:26:52.129870000 Central Standard Time  
+_Time of the packet arrival at the destination_
+- **Epoch Time**: 1265236012.129870000  
+_Also called UNIX time, this is a number of seconds since January 1, 1970_
+- **Frame Number**: 3  
+_Packet number in this capture_
+- **Frame Length**: 86 bytes (688 bits)  
+_Packet length_
+
 ## Advanced Packet Analysis in Wireshark
 
 
