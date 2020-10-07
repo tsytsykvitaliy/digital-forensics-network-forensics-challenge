@@ -50,7 +50,7 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 3. Advanced Packet Analysis in Wireshark.
 4. An Overview/Introduction to TShark.
 
-### Overview:
+## Overview:
 Network Forensics is a crucial part of digital forensics and its importance continues to grow everyday.
 Almost all personal computers and servers are going to have built-in networking capabilities, such as wi-fi or ethernet, allowing them to communicate with other devices across the internet.
 These connections can be used to transfer illegal files, deny normal service, and allow malware to go on and become viral.                                                                                                                                                           
@@ -64,20 +64,22 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 
-### TCP/IP packet structure and An Overview/Introduction to Wireshark
+## TCP/IP packet structure and An Overview/Introduction to Wireshark
 
 
 
 
-### Basic Packet Analysis in Wireshark
+## Basic Packet Analysis in Wireshark
+
+### The Tip of The Iceberg
+
+Packets contain a large amount of information, so it's always best to start with what we can see easily. Lets take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
+
+## Advanced Packet Analysis in Wireshark
 
 
 
-### Advanced Packet Analysis in Wireshark
-
-
-
-### An Overview/Introduction to TShark
+## An Overview/Introduction to TShark
 TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
 
 `tshark -i wlan0 -w captureOutput.pcap`
