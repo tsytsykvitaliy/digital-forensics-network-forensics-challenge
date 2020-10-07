@@ -88,11 +88,11 @@ After writing to the captureOuput.pcap file you can read the file with the follo
 
 TShark offers a plethora of options to help specify any search vectors. A few examples of some options would be as follows.
 
-`-a| --autostop <capture autostop condition>` which tells TShark when to stop writing to the capture file. 
+- `-a| --autostop <capture autostop condition>` which tells TShark when to stop writing to the capture file. 
 
-`-c <capture packet count>` which sets the maximum number of packets to read when capturing live data. 
+- `-c <capture packet count>` which sets the maximum number of packets to read when capturing live data. 
 
-`-2 <two-pass analysis>` which causes TShark to buffer an output until the entire first pass is done. 
+- `-2 <two-pass analysis>` which causes TShark to buffer an output until the entire first pass is done. 
 
 These are just a few of the options that TShark allows. If you have questions feel free to reference `tshark -h` or `tshark --help` within the terminal window.
 
