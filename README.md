@@ -99,7 +99,9 @@ This is the easiest way to see the most common information about the packets. Ho
 
 ### Digging Deeper
 
-Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and look through the _Packet Details_.
+Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section so it will be easier to analyze our specific DNS packet, knowing that information. We will start from the top of the list with the physical layer, and work our way to the bottom - the "highest" protocol.
+
+![](physical.png)
 
 ## Advanced Packet Analysis in Wireshark
 
