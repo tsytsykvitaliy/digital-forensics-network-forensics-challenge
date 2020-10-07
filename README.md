@@ -64,19 +64,19 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 
-### TCP/IP packet structure and An Overview/Introduction to Wireshark
+## TCP/IP packet structure and An Overview/Introduction to Wireshark
 
 
 
 
-### Basic Packet Analysis in Wireshark
+## Basic Packet Analysis in Wireshark
 
 
 
-### Advanced Packet Analysis in Wireshark
+## Advanced Packet Analysis in Wireshark
 Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways Wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
 
-#### Extracting Files
+### Extracting Files
 When analyzing PCAP files, it's not uncommon to come across HTTP packets that were sent to request files be retrieved such as images when visiting websites, websites themselves, videos, and more. While we can get an idea of what the file might look like just from examining the packet, we can take it a step further and reconstruct/export the file to view ourselves. 
 
 In order to do this, first go to the File menu, mouse down to the Export Objects menu, and then select the HTTP option.
@@ -95,7 +95,7 @@ To actually export the file, select the item in the list and select the save opt
 
 Feel free to try this out on your own using the HTTP2.cap file stored in this repo.
 
-#### VoIP Analysis
+### VoIP Analysis
 The majority of modern day phones in your everyday office operate using VoIP, or Voice over IP, in order to communicate with other phones both in the office and outside of it. These phones transmit their data through their network and across the internet. As a result, just like any data sent across a network connection, the data they communicate is compromised of packets and can be captured in a PCAP file. In order to easily analyze these packets, Wireshark has a built-in "telephony" tool.
 
 To understand how this data is analyzed, we need to examine the protocols at play during a VoIP phone call. The first protocol we're going to look at is the SIPS protocol. The SIPS protocol, or Session Initiation  Protocol, does exactly what you'd expect it to do: it initiates sessions. In this case these sessions are phone calls. The following image provides a glance at some SIPS traffic.
@@ -124,7 +124,7 @@ From here you can actually playback the phone call, listen in, and analyze what 
 
 Extracting files and analyzing VoIP calls are just a couple of advanced ways you can analyze data in Wireshark. Feel free to check out the Wireshark manual and explore other protocols out there to see what other data you can analzye in Wireshark!
 
-### An Overview/Introduction to TShark
+## An Overview/Introduction to TShark
 TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
 
 `tshark -i wlan0 -w captureOutput.pcap`
@@ -147,4 +147,4 @@ These are just a few of the options that TShark allows. If you have questions fe
 
 
 
-### References
+## References
