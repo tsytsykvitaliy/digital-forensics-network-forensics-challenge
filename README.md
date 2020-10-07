@@ -66,7 +66,7 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 ## TCP/IP packet structure and An Overview/Introduction to Wireshark
 ### Opening a Packet
-So before we dive deep into Wireshark, we first need to understand what we will be looking at.  
+Before we dive deep into Wireshark, we first need to understand what we will be looking at.  
 This all starts with understanding the IP packet structure\!  
 When we look at network traffic, we will often be looking at TCP/IP packets so this is where we will start.  
  
