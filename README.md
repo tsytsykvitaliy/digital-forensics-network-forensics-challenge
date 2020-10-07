@@ -76,17 +76,25 @@ Once we have the basics down, we'll take a look at some more advanced topics dea
 
 
 ### An Overview/Introduction to TShark
-TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window. 
+TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
 
-tshark -i wlan0 -w captureOutput.pcap
+`tshark -i wlan0 -w captureOutput.pcap`
 
-To help breakdown the above syntax it reads as tshark [-i<capture interface> wlan0 <wifi card> -w <outfile>].
+To help breakdown the above syntax, it reads as `tshark [-i<capture interface> wlan0 <wifi card> -w <outfile>]`.
 
-After writing to the captureOuput.pcap file you can read the file with the following syntax.
+After writing to the captureOuput.pcap file you can read the file with the following syntax:
 
-tshark -r captureOutput.pcap
+`tshark -r captureOutput.pcap`
 
-TShark offers a plethora of options to help specify any search vectors. A few examples of some options would be as follows. -a| --autostop <capture autostop condition> which tells TShark when to stop writing to the capture file. -c <capture packet count> which sets the maximum number of packets to read when capturing live data. -2 <two-pass analysis> which causes TShark to buffer an output until the entire first pass is done. These are just a few of the options that TShark allows. If you have questions feel free to reference "tshark -h" or "tshark --help" within the terminal window.
+TShark offers a plethora of options to help specify any search vectors. A few examples of some options would be as follows.
+
+- `-a| --autostop <capture autostop condition>` which tells TShark when to stop writing to the capture file. 
+
+- `-c <capture packet count>` which sets the maximum number of packets to read when capturing live data. 
+
+- `-2 <two-pass analysis>` which causes TShark to buffer an output until the entire first pass is done. 
+
+These are just a few of the options that TShark allows. If you have questions feel free to reference `tshark -h` or `tshark --help` within the terminal window.
 
 
 
