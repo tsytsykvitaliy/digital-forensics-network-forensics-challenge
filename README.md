@@ -105,9 +105,9 @@ Having a basic understanding of how packets can be analyzed will help greatly as
 
 ### Using Wireshark
 After installing, and running the software we need to select a network device to start monitoring (named eth0, Wi-Fi, etc)  
- > **NOTE:** Program may need to be run as an _Administrator_    
+ > **NOTE:** Program may need to be ran as an _Administrator_    
 
-Once we select a device we immediately start collecting incoming packets
+Once we select a device we immediately start collecting incoming packets.
 There are four main windows here:
  - Command Menu w/ Display filter
  - Packet Listing
