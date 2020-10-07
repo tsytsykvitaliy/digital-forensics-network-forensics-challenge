@@ -74,6 +74,18 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 ### Advanced Packet Analysis in Wireshark
+Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
+
+#### Extracting Files
+
+
+
+#### VoIP Analysis
+The majority of moden day phones in your everyday office operate using VoIP, or Voice over IP, in order to communicate with other phones both in the office and outside of it. These phones transmit their data through their network and across the internet. As a result, just like any data sent across a network connection, the data they communicate is compromised of packets and can be captured in a PCAP file. In order to easily analyze these packets, Wireshark has a built-in "telephony" tool.
+
+To understand how this data is analyzed, we need to examine the protocols at play during a VoIP phone call. The first protocol we're going to look at is the SIPS protocol. The SIPS protocol, or Session Initiation  Protocol, does exactly what you'd expect it to do: it initiates sessions. In this case these sessions are phone calls. The following image provides a glance at some SIPS traffic.
+
+(insert sips image)
 
 
 
