@@ -76,13 +76,13 @@ Once we have the basics down, we'll take a look at some more advanced topics dea
 
 
 ### An Overview/Introduction to TShark
-TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window. 
+TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
 
 `tshark -i wlan0 -w captureOutput.pcap`
 
-To help breakdown the above syntax it reads as `tshark [-i<capture interface> wlan0 <wifi card> -w <outfile>]`.
+To help breakdown the above syntax, it reads as `tshark [-i<capture interface> wlan0 <wifi card> -w <outfile>]`.
 
-After writing to the captureOuput.pcap file you can read the file with the following syntax.
+After writing to the captureOuput.pcap file you can read the file with the following syntax:
 
 `tshark -r captureOutput.pcap`
 
