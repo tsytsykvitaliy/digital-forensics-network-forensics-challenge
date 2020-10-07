@@ -82,7 +82,7 @@ TShark is the terminal oriented version of Wireshark that can capture and displa
 
 `tshark -i wlan0 -w captureOutput.pcap`
 
-To help breakdown the above syntax, it reads as `tshark [-i<capture interface> wlan0 <wifi card> -w <outfile>]`.
+To help breakdown the above syntax, it reads as `tshark [-i <capture interface> wlan0 <wifi card> -w <outfile>]`.
 
 After writing to the captureOuput.pcap file you can read the file with the following syntax:
 
