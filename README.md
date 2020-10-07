@@ -73,7 +73,33 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 ### The Tip of The Iceberg
 
-Packets contain a large amount of information, so it's always best to start with what we can see easily. Lets take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
+Packets contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
+
+![](DNS_listing.png)
+
+We will be analyzing packet #3.
+Just by looking at all the columns that correspond to our packet (row), we can gather the following information:
+
+- **Number**: 3  
+_The number of the packet in the capture file_
+- **Time**: 0.000041  
+_Absolute time since the beginning of the capture (in seconds)_
+- **Source**: 10.0.0.132  
+_The system that sent the packet. In most cases, the IPv4 address_
+- **Destination**: 10.0.0.2  
+_The system that received the packet. In most cases, the IPv4 address_
+- **Protocol**: DNS  
+_Specific protocol that the packet used_
+- **Length**: 86  
+_Number of bytes in this packet_
+- **Info**: Standard query 0x332e A www.offensive-security.com  
+_Summary of the information in the highest layer protocol_
+
+This is the easiest way to see the most common information about the packets. However, there is much more that can be uncovered.
+
+### Digging Deeper
+
+Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and look through the _Packet Details_.
 
 ## Advanced Packet Analysis in Wireshark
 
