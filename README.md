@@ -74,7 +74,7 @@ When we look at network traffic we will often be looking at TCP/IP packets so th
 
 *This is what a packet looks like in Wireshark.*  
 
-We can see the HEX and Ascii text on the right side and what this translates to on the left.  
+We can see the HEX and ASCII text on the right side and what this translates to on the left.  
 Almost all packets can be understood using the seven layers of the OSI / networking model:  
 
 - **Physical Layer**        
@@ -117,9 +117,9 @@ There are four main windows here:
 To pause the current session, click the red square at the top right (start again with the green fin)  
 You can click on any packet to further analyze in the _Packet Details_ and _Packet Bytes_ frames.
 
-In packet list you can see the Packet Number, time since first packet, Source and Destination IP address, Protocol, Length of the package in bytes and :star: package info :star:  
+In the Packet Listing section, you can see the Packet Number, time since first packet, Source and Destination IP address, Protocol, Length of the package in bytes and :star: package info :star:  
 Package info is very useful for gaining quick intel.  
-If you're wondering what a specific protocol does, your friend google is always there to help! 
+If you're wondering what a specific protocol does, your friend Google is always there to help! 
 
 This is really all you need to know to get started in Wireshark, so lets start looking at some of the cool things you can do!
 
