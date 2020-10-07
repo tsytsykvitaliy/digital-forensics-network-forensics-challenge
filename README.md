@@ -130,21 +130,21 @@ This is really all you need to know to get started in Wireshark, so lets start l
 Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways Wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
 
 ### Extracting Files
-When analyzing PCAP files, it's not uncommon to come across HTTP packets that were sent to request files be retrieved such as images when visiting websites, websites themselves, videos, and more. While we can get an idea of what the file might look like just from examining the packet, we can take it a step further and reconstruct/export the file to view ourselves. 
+When analyzing PCAP files, it's not uncommon to come across HTTP packets that were sent to request files be retrieved such as images when visiting websites, websites themselves, videos, and more. While we can get an idea of what the file might look like just from examining the packet, we can take it a step further and reconstruct/export the file to view it ourselves. 
 
 In order to do this, first go to the File menu, mouse down to the Export Objects menu, and then select the HTTP option.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/export_1.JPG" />
+![](export_1.JPG)
 
 Next, you'll see a menu listing all of the packets with data that can be exported.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/export_2.JPG" />
+![](export_2.JPG)
 
 While in this case we only have one packet that transmitted a file, often times this menu will be filled with potential files for you to extract. For each item in this menu Wireshark provides the packet number (so you can easily find the packet to look at itself), the hostname from where the file was retrieved from, the content type, the file size, and the file name. This gives us all the information we need to know about the file we're looking at and how to save it when exporting it.
 
 To actually export the file, select the item in the list and select the save option. Once you have it saved, you can open the file up to see what it included. In this case, we have a PacketLife logo.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/logo.png" />
+![](logo.png)
 
 Feel free to try this out on your own using the HTTP2.cap file stored in this repo.
 
@@ -153,25 +153,25 @@ The majority of modern day phones in your everyday office operate using VoIP, or
 
 To understand how this data is analyzed, we need to examine the protocols at play during a VoIP phone call. The first protocol we're going to look at is the SIPS protocol. The SIPS protocol, or Session Initiation  Protocol, does exactly what you'd expect it to do: it initiates sessions. In this case these sessions are phone calls. The following image provides a glance at some SIPS traffic.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_1.JPG" />
+![](sip_1.JPG)
 
 In this image, SIPS packets are being sent back and forth primarily registering new IP's for phones and notifying phones about notifications they have. To understand how the protocol begins a phone call, we can look at the following image.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_5.JPG" />
+![](sip_5.JPG)
 
 First, an "invite" packet is sent from one phone to another. Then, the other phone replies with a "trying" packet, a "ringing" packet, and finally an "ok" packet. Lastly, the original phone replies with an "ack" (acknowledgement) packet and the call begins.
 
 Once the call begins, the two protocols RTP and RTCP take over. RTP stands for Real-time Transport Protocol and handles sending all of the packets containing the actual information communicated over the phone call (your voice and what you're saying). RTCP stands for RTP Control Protocol and controls the logistical portion of the phone call. It deals with packet loss, delay, and the overall quaility of the phone call and data transmission. The following image shows some RTP and RTCP packets.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_2.JPG" />
+![](sip_2.JPG)
 
 Now that we have an understanding of the forces at play during a VoIP call, let's look at how to analyze this data in Wireshark. As mentioned above, Wireshark has a section called "telephony" that enables you to analyze all of this data. To access it you go to the Telephony menu and then select the VoIP option.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_3.JPG" />
+![](sip_3.JPG)
 
 Next, you'll see a menu with different RTP streams to select from. Select one of them and click OK. This will result in a window popping up similar to the following image.
 
-<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_4.JPG" />
+![](sip_4.JPG)
 
 From here you can actually playback the phone call, listen in, and analyze what was said at differnet time stamps. If you'd like to try this yourself, download and use the SIP.pcap file.
 
