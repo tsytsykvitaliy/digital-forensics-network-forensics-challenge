@@ -85,9 +85,29 @@ The majority of moden day phones in your everyday office operate using VoIP, or 
 
 To understand how this data is analyzed, we need to examine the protocols at play during a VoIP phone call. The first protocol we're going to look at is the SIPS protocol. The SIPS protocol, or Session Initiation  Protocol, does exactly what you'd expect it to do: it initiates sessions. In this case these sessions are phone calls. The following image provides a glance at some SIPS traffic.
 
-(insert sips image)
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_1.JPG" />
 
+In this image, SIPS packets are being sent back and forth primarily registering new IP's for phones and notifying phones about notifications they have. To understand how the protocol begins a phone call, we can look at the following image.
 
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_5.JPG" />
+
+First, an "invite" packet is sent from one phone to another. Then, the other phone replies with a "trying" packet, a "ringing" packet, and finally an "ok" packet. Lastly, the original phone replies with an "ack" (acknowledgement) packet and the call begins.
+
+Once the call begins, the two protocols RTP and RTCP take over. RTP stands for Real-time Transport Protocol and handles sending all of the packets containing the actual information communicated over the phone call (your voice and what you're saying). RTCP stands for RTP Control Protocol and controls the logistical portion of the phone call. It deals with packet loss, delay, and the overall quaility of the phone call and data transmission. The following image shows some RTP and RTCP packets.
+
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_2.JPG" />
+
+Now that we have an understanding of the forces at play during a VoIP call, let's look at how to analyze this data in Wireshark. As mentioned above, Wireshark has a section called "telephony" that enables you to analyze all of this data. To access it you go to the telephony menu and then select the VoIP option.
+
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_3.JPG" />
+
+Next, you'll see a menu with different RTP streams to select from. Select one of them and click OK. This will result in a window popping up similar to the following image.
+
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_4.JPG" />
+
+From here you can actually playback the phone call, listen in, and analyze what was said at differnet time stamps. If you'd like to try this yourself, download and use the SIP.pcap file.
+
+Extracting files and analyzing VoIP calls are just a couple of advanced ways you can analyze data in Wireshark. Feel free to check out the Wireshark manual and explore other protocols out there to see what other data you can analzye in Wireshark!
 
 ### An Overview/Introduction to TShark
 TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
