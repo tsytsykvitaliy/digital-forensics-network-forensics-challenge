@@ -72,9 +72,9 @@ When we look at network traffic we will often be looking at TCP/IP packets so th
  
 ![](telnet.png)
 
-*This is what a packet looks like in Wireshark.*
-We can see the HEX and Ascii text on the right side and what this translates to on the left.    
- 
+*This is what a packet looks like in Wireshark.*  
+
+We can see the HEX and Ascii text on the right side and what this translates to on the left.  
 Almost all packets can be understood using the seven layers of the OSI / networking model:  
 
 - **Physical Layer**        
@@ -100,8 +100,28 @@ _Usually either TCP or UDP_
 _The actual protocol data_
   - depends on which protocol is used
   - in our example, Telnet includes data such as a **password** being sent in plain text!!!
+  
+Having a basic understanding of how packets can be analyzed will help greatly as we look more into network forensics with Wireshark.
 
+### Using Wireshark
+After installing, and running the software we need to select a network device to start monitoring (named eth0, Wi-Fi, etc)  
+ > **NOTE:** Program may need to be run as an _Administrator_    
 
+Once we select a device we immediately start collecting incoming packets
+There are four main windows here:
+ - Command Menu w/ Display filter
+ - Packet Listing
+ - Packet Details 
+ - Packet Bytes  
+ 
+To pause the current session, click the red square at the top right (start again with the green fin)  
+You can click on any packet to further analyze in the _Packet Details_ and _Packet Bytes_ frames.
+
+In packet list you can see the Packet Number, time since first packet, Source and Destination IP address, Protocol, Length of the package in bytes and :star: package info :star:  
+Package info is very useful for gaining quick intel.  
+If you're wondering what a specific protocol does, your friend google is always there to help! 
+
+This is really all you need to know to get started in Wireshark, so lets start looking at some of the cool things you can do!
 
 ## Basic Packet Analysis in Wireshark
 
