@@ -118,13 +118,17 @@ _Packet number in this capture_
 - **Frame Length**: 86 bytes (688 bits)  
 _Packet length_
 
-
 #### Data Link Layer
 
 ![](data-link.png)  
 _Screenshot of the data link layer information we have about the DNS packet._  
 
-
+- **Destination**: VMware_f9:77:70 (00:50:56:f9:77:70)  
+_Destination MAC address_  
+- **Source**: VMware_0b:97:ef (00:0c:29:0b:97:ef)  
+_Source MAC address_  
+- **Type**: IPv4 (0x0800)  
+_Indicates which upper layer protocol should be used_  
 
 #### Network Layer
 
