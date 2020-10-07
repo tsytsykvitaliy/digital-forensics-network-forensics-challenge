@@ -74,14 +74,29 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 ### Advanced Packet Analysis in Wireshark
-Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
+Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways Wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
 
 #### Extracting Files
+When analyzing PCAP files, it's not uncommon to come across HTTP packets that were sent to request files be retrieved such as images when visiting websites, websites themselves, videos, and more. While we can get an idea of what the file might look like just from examining the packet, we can take it a step further and reconstruct/export the file to view ourselves. 
 
+In order to do this, first go to the File menu, mouse down to the Export Objects menu, and then select the HTTP option.
 
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/export_1.JPG" />
+
+Next, you'll see a menu listing all of the packets with data that can be exported.
+
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/export_2.JPG" />
+
+While in this case we only have one packet that transmitted a file, often times this menu will be filled with potential files for you to extract. For each item in this menu Wireshark provides the packet number (so you can easily find the packet to look at itself), the hostname from where the file was retrieved from, the content type, the file size, and the file name. This gives us all the information we need to know about the file we're looking at and how to save it when exporting it.
+
+To actually export the file, select the item in the list and select the save option. Once you have it saved, you can open the file up to see what it included. In this case, we have a PacketLife logo.
+
+<img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/logo.png" />
+
+Feel free to try this out on your own using the HTTP2.cap file stored in this repo.
 
 #### VoIP Analysis
-The majority of moden day phones in your everyday office operate using VoIP, or Voice over IP, in order to communicate with other phones both in the office and outside of it. These phones transmit their data through their network and across the internet. As a result, just like any data sent across a network connection, the data they communicate is compromised of packets and can be captured in a PCAP file. In order to easily analyze these packets, Wireshark has a built-in "telephony" tool.
+The majority of modern day phones in your everyday office operate using VoIP, or Voice over IP, in order to communicate with other phones both in the office and outside of it. These phones transmit their data through their network and across the internet. As a result, just like any data sent across a network connection, the data they communicate is compromised of packets and can be captured in a PCAP file. In order to easily analyze these packets, Wireshark has a built-in "telephony" tool.
 
 To understand how this data is analyzed, we need to examine the protocols at play during a VoIP phone call. The first protocol we're going to look at is the SIPS protocol. The SIPS protocol, or Session Initiation  Protocol, does exactly what you'd expect it to do: it initiates sessions. In this case these sessions are phone calls. The following image provides a glance at some SIPS traffic.
 
@@ -97,7 +112,7 @@ Once the call begins, the two protocols RTP and RTCP take over. RTP stands for R
 
 <img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_2.JPG" />
 
-Now that we have an understanding of the forces at play during a VoIP call, let's look at how to analyze this data in Wireshark. As mentioned above, Wireshark has a section called "telephony" that enables you to analyze all of this data. To access it you go to the telephony menu and then select the VoIP option.
+Now that we have an understanding of the forces at play during a VoIP call, let's look at how to analyze this data in Wireshark. As mentioned above, Wireshark has a section called "telephony" that enables you to analyze all of this data. To access it you go to the Telephony menu and then select the VoIP option.
 
 <img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/Section-3-Draft/sip_3.JPG" />
 
