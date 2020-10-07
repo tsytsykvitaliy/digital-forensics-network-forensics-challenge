@@ -68,7 +68,7 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 ### Opening a Packet
 So before we dive deep into Wireshark, we first need to understand what we will be looking at.  
 This all starts with understanding the IP packet structure\!  
-When we look at network traffic we will often be looking at TCP/IP packets so this is where we will start.  
+When we look at network traffic, we will often be looking at TCP/IP packets so this is where we will start.  
  
 ![](telnet.png)
 
@@ -107,7 +107,7 @@ Having a basic understanding of how packets can be analyzed will help greatly as
 After installing, and running the software we need to select a network device to start monitoring (named eth0, Wi-Fi, etc)  
  > **NOTE:** Program may need to be ran as an _Administrator_    
 
-Once we select a device we immediately start collecting incoming packets.
+Once we select a device, we immediately start collecting incoming packets.
 There are four main windows here:
  - Command Menu w/ Display filter
  - Packet Listing
@@ -115,9 +115,9 @@ There are four main windows here:
  - Packet Bytes  
  
 To pause the current session, click the red square at the top right (start again with the green fin)  
-You can click on any packet to further analyze in the _Packet Details_ and _Packet Bytes_ frames.
+You can click on any packet to further analyze it in the _Packet Details_ and _Packet Bytes_ frames.
 
-In the Packet Listing section, you can see the Packet Number, time since first packet, Source and Destination IP address, Protocol, Length of the package in bytes and :star: package info :star:  
+In the Packet Listing section you can see the Packet Number, time since first packet, Source and Destination IP address, Protocol, Length of the package in bytes, and :star: package info :star:  
 Package info is very useful for gaining quick intel.  
 If you're wondering what a specific protocol does, your friend Google is always there to help! 
 
