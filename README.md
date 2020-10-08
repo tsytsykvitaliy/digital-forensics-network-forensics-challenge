@@ -107,7 +107,7 @@ Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we w
 ![](physical.png)  
 _Screenshot of the physical layer information we have about the DNS packet._  
 
-There is plenty of rows to look at and there are plenty of resources that break them all down, but we are just going to look at most important information:
+There is plenty of rows to look at and there are lots of resources out there that break them all down, but right now we are just going to focus on the most important information:
 
 - **Arrival Time**: Feb 3, 2010 16:26:52.129870000 Central Standard Time  
 _Time of the packet arrival at the destination_
@@ -184,7 +184,7 @@ _Number of answers_
 - **Queries**: www.offensive-security.com: type A, class IN  
 _All requests included in this packet. In our case, we only have one_  
 
-As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - filtering.
+As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet in the _Packet Listing_ window and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - filtering.
 
 ### Filtering
 
