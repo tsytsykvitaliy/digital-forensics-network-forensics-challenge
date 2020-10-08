@@ -90,7 +90,7 @@ _The system that sent the packet. In most cases, the IPv4 address_
 - **Destination**: 10.0.0.2  
 _The system that received the packet. In most cases, the IPv4 address_
 - **Protocol**: DNS  
-_Specific protocol that the packet used_
+_An application layer protocol that the packet used_
 - **Length**: 86  
 _Number of bytes in this packet_
 - **Info**: Standard query 0x332e A www.offensive-security.com  
@@ -117,6 +117,8 @@ _Also called UNIX time, this is a number of seconds since January 1, 1970_
 _Packet number in this capture_
 - **Frame Length**: 86 bytes (688 bits)  
 _Packet length_
+- **Protocols in frame**: eth:ethertype:ip:udp:dns  
+_All protocols used by the packet (by layer)_  
 
 #### Data Link Layer
 
@@ -135,7 +137,22 @@ _Indicates which upper layer protocol should be used_
 ![](network.png)  
 _Screenshot of the network layer information we have about the DNS packet._  
 
-
+- **Total Length**: 72  
+_Length of the IP packet (20 bytes - the header, the rest - data)_  
+- **Identification**: 0x2807 (10247)  
+_A unique ID of the IP packet_  
+- **Flags**: 0x4000, Don't fragment  
+_Any flags set for the packet. In our case, "Don't fragment" bit is set to 1, which forbids packet fragmentation_  
+- **Time to live**: 64  
+_The maximum time (in seconds) the packet is allowed to exist on the network_  
+- **Protocol**: UDP (17)  
+_Indicates which upper layer protocol should be used. Number inside the parentheses indictes port number to be used _  
+- **Header checksum**: 0xfe18 \[validation disabled]  
+_The header checksum value and its validation status_  
+- **Source**: 10.0.0.132  
+_An IPv4 address of the system that sent the packet_
+- **Destination**: 10.0.0.2  
+_An IPv4 address of the system that received the packet_
 
 #### Transport Layer
 
