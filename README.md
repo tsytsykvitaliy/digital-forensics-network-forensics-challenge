@@ -173,6 +173,16 @@ _The checksum value and its verification status_
 ![](dns.png)  
 _Screenshot of the application layer information we have about the DNS packet._  
 
+- **Transaction ID**: 0x332e  
+_A unique ID of the query-response pair_  
+- **Flags**: 0x0100 Standard query  
+_Any flags set to the packet. In our case, this packet is a query (0), a standard one (0), not truncated (0), recursively done (1), Z reserved (0), and doesn't accept non-authenticated data (0)_  
+- **Questions**: 1  
+_Number of requests_  
+- **Answer RRs**: 0  
+_Number of answers_  
+- **Queries**: www.offensive-security.com: type A, class IN  
+_All requests included in this packet. In our case, we only have one_  
 
 ## Advanced Packet Analysis in Wireshark
 
