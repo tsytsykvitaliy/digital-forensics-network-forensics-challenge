@@ -184,6 +184,10 @@ _Number of answers_
 - **Queries**: www.offensive-security.com: type A, class IN  
 _All requests included in this packet. In our case, we only have one_  
 
+As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - filtering.
+
+### Filtering
+
 ## Advanced Packet Analysis in Wireshark
 
 
