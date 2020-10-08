@@ -69,7 +69,7 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 
-## Basic Packet Analysis in Wireshark
+## Basic Packet Analysis and Filtering in Wireshark
 
 ### The Tip of The Iceberg
 
@@ -146,7 +146,7 @@ _Any flags set for the packet. In our case, "Don't fragment" bit is set to 1, wh
 - **Time to live**: 64  
 _The maximum time (in seconds) the packet is allowed to exist on the network_  
 - **Protocol**: UDP (17)  
-_Indicates which upper layer protocol should be used. Number inside the parentheses indictes port number to be used _  
+_Indicates which upper layer protocol should be used. Number inside the parentheses indictes an assigned port number for that protocol on the IP layer_  
 - **Header checksum**: 0xfe18 \[validation disabled]  
 _The header checksum value and its validation status_  
 - **Source**: 10.0.0.132  
@@ -159,7 +159,14 @@ _An IPv4 address of the system that received the packet_
 ![](transport.png)  
 _Screenshot of the transport layer information we have about the DNS packet._  
 
-
+- **Source Port**: 35540  
+_Port from which the packet has been sent_  
+- **Destination Port**: 53  
+_Port to which the packet has been sent_  
+- **Length**: 52  
+_Length of the UDP packet (8 bytes - the header, the rest - data)_  
+- **Checksum**: 0x2d94 \[unverified]  
+_The checksum value and its verification status_  
 
 #### Application Layer
 
