@@ -123,8 +123,159 @@ If you're wondering what a specific protocol does, your friend Google is always 
 
 This is really all you need to know to get started in Wireshark, so lets start looking at some of the cool things you can do!
 
-## Basic Packet Analysis in Wireshark
+## Basic Packet Analysis, Sorting, and Filtering in Wireshark
 
+### Packet Analysis
+
+#### The Tip of The Iceberg
+
+Packets (also referred to as frames) contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
+
+![](DNS_listing.png)  
+_Screenshot of the Packet Listing window_  
+
+We will be analyzing packet #3.
+Just by looking at all the sorting columns that correspond to our packet (row), we can gather the following information:
+
+- **Number**: 3  
+_The number of the packet in the capture file_
+- **Time**: 0.000041  
+_Absolute time since the beginning of the capture (in seconds)_
+- **Source**: 10.0.0.132  
+_The system that sent the packet. In most cases, the IPv4 address_
+- **Destination**: 10.0.0.2  
+_The system that received the packet. In most cases, the IPv4 address_
+- **Protocol**: DNS  
+_An application layer protocol that the packet used_
+- **Length**: 86  
+_Number of bytes in this packet_
+- **Info**: Standard query 0x332e A www.offensive-security.com  
+_Summary of the information in the highest layer protocol_
+
+This is the easiest way to see the most common information about the packets. However, there is much more that can be uncovered.
+
+#### Digging Deeper
+
+Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section, so it will be easier to analyze our specific DNS packet now. We will start from the top of the list with the physical layer and work our way to the bottom - the "highest" protocol.
+
+##### Physical Layer
+
+![](physical.png)  
+_Screenshot of the physical layer information we have about the DNS packet._  
+
+There are plenty of rows to look at and there are lots of resources out there that break them all down, but right now we are just going to focus on the most important information:
+
+- **Arrival Time**: Feb 3, 2010 16:26:52.129870000 Central Standard Time  
+_Time of the packet arrival at the destination_
+- **Epoch Time**: 1265236012.129870000  
+_Also called UNIX time, this is the number of seconds since January 1, 1970_
+- **Frame Number**: 3  
+_Packet number in this capture_
+- **Frame Length**: 86 bytes (688 bits)  
+_Packet length_
+- **Protocols in frame**: eth:ethertype:ip:udp:dns  
+_All protocols used by the packet (by layer)_  
+
+##### Data Link Layer
+
+![](data-link.png)  
+_Screenshot of the data link layer information we have about the DNS packet._  
+
+- **Destination**: VMware_f9:77:70 (00:50:56:f9:77:70)  
+_Destination MAC address_  
+- **Source**: VMware_0b:97:ef (00:0c:29:0b:97:ef)  
+_Source MAC address_  
+- **Type**: IPv4 (0x0800)  
+_Indicates which upper layer protocol should be used_  
+
+##### Network Layer
+
+![](network.png)  
+_Screenshot of the network layer information we have about the DNS packet._  
+
+- **Total Length**: 72  
+_Length of the IP packet (20 bytes - the header, the rest - data)_  
+- **Identification**: 0x2807 (10247)  
+_A unique ID of the IP packet_  
+- **Flags**: 0x4000, Don't fragment  
+_Any flags set for the packet. In our case, "Don't fragment" bit is set to 1, which forbids packet fragmentation_  
+- **Time to live**: 64  
+_The maximum time (in seconds) the packet is allowed to exist on the network_  
+- **Protocol**: UDP (17)  
+_Indicates which upper layer protocol should be used. Number inside the parentheses indictes an assigned port number for that protocol on the IP layer_  
+- **Header checksum**: 0xfe18 \[validation disabled]  
+_The header checksum value and its validation status_  
+- **Source**: 10.0.0.132  
+_An IPv4 address of the system that sent the packet_
+- **Destination**: 10.0.0.2  
+_An IPv4 address of the system that received the packet_
+
+##### Transport Layer
+
+![](transport.png)  
+_Screenshot of the transport layer information we have about the DNS packet._  
+
+- **Source Port**: 35540  
+_Port from which the packet has been sent_  
+- **Destination Port**: 53  
+_Port to which the packet has been sent_  
+- **Length**: 52  
+_Length of the UDP packet (8 bytes - the header, the rest - data)_  
+- **Checksum**: 0x2d94 \[unverified]  
+_The checksum value and its verification status_  
+
+##### Application Layer
+
+![](dns.png)  
+_Screenshot of the application layer information we have about the DNS packet._  
+
+- **Transaction ID**: 0x332e  
+_A unique ID of the query-response pair_  
+- **Flags**: 0x0100 Standard query  
+_Any flags set to the packet. In our case, this packet is a query (0), a standard one (0), not truncated (0), recursively done (1), Z reserved (0), and doesn't accept non-authenticated data (0)_  
+- **Questions**: 1  
+_Number of requests_  
+- **Answer RRs**: 0  
+_Number of answers_  
+- **Queries**: www.offensive-security.com: type A, class IN  
+_All requests included in this packet. In our case, we only have one_  
+
+As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet in the _Packet Listing_ window and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - sorting and filtering.
+
+### Sorting and Filtering
+
+#### Sorting Columns
+
+Let's look back at where we started: the _Packet Listing_ window. We saw all the standard columns like **Number** or **Protocol**. But what if we want to sort captured packets by something else? For example, the **Destination Port**? 
+
+This is actually fairly simple. All we have to do is select any packet that contains the desired field, just like our DNS query packet #3, right click the **Destination Port** field (in our case), and select `Apply as a Column`. We can also use the `Ctrl + Shift + I` once the field has been highlighted.
+
+Now we should be able to see the newly added sorting column next to all the standard ones.
+
+#### Display Filter
+
+The easiest way to filter the packets is by using Wireshark's _Display Filter_ that is located right under the _Command Menu_.  
+
+![Display Filter](display-filter.png)  
+_Screenshot of the Command Menu and the Display Filter_  
+
+_Display Filter_ doesn't quite work the way `Ctrl + F` does on the web pages, so it's important to understand the correct way to build the expressions.
+
+Let's look at the basic syntax.  
+
+- To only display packets containing a specific protocol - just type in that protocol.  
+_For example, `http`_  
+
+- To filter them out further - type in that protocol, period, and further filtering options.  
+_For example, to only show the http responses - type in `http.response`_  
+
+- To compare values - use the comparison operators. Wireshark supports both C-like and English syntax for them.  
+_For example, to only show packets with the source IP address 10.0.0.2 - type in `ip.src == 10.0.0.2` or `ip.src eq 10.0.0.2`_  
+
+- To combine expressions - use the logical operators. Wireshark supports both C-like and English syntax for them.  
+_For example, to only show packets with the source IP address 10.0.0.2 or the source IP address 10.0.0.132 - type in `ip.src == 10.0.0.2 || ip.src == 10.0.0.132` or `ip.src eq 10.0.0.2 or ip.src eq 10.0.0.132`_  
+
+For more detailed explanation and extra content check out the [Wireshark's User Guide on Building Display Filter Expressions](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html).  
 
 ## Advanced Packet Analysis in Wireshark
 Aside from basic packet analysis, there's significantly more Wireshark is capable of. In this section we'll examine two ways Wireshark can go beyond simply looking at packets: extracting files and VoIP analysis.
@@ -176,6 +327,7 @@ Next, you'll see a menu with different RTP streams to select from. Select one of
 From here you can actually playback the phone call, listen in, and analyze what was said at differnet time stamps. If you'd like to try this yourself, download and use the SIP.pcap file.
 
 Extracting files and analyzing VoIP calls are just a couple of advanced ways you can analyze data in Wireshark. Feel free to check out the Wireshark manual and explore other protocols out there to see what other data you can analzye in Wireshark!
+
 
 ## An Overview/Introduction to TShark
 TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. Without having any options set, TShark works in a similar way as a tcpdump. To begin capturing packets with TShark you would use the following syntax within the terminal window: 
