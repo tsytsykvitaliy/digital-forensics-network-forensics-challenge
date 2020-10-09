@@ -156,19 +156,19 @@ This is the easiest way to see the most common information about the packets. Ho
 
 #### Digging Deeper
 
-Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section so it will be easier to analyze our specific DNS packet, knowing that information. We will start from the top of the list with the physical layer, and work our way to the bottom - the "highest" protocol.
+Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section, so it will be easier to analyze our specific DNS packet now. We will start from the top of the list with the physical layer and work our way to the bottom - the "highest" protocol.
 
 ##### Physical Layer
 
 ![](physical.png)  
 _Screenshot of the physical layer information we have about the DNS packet._  
 
-There is plenty of rows to look at and there are lots of resources out there that break them all down, but right now we are just going to focus on the most important information:
+There are plenty of rows to look at and there are lots of resources out there that break them all down, but right now we are just going to focus on the most important information:
 
 - **Arrival Time**: Feb 3, 2010 16:26:52.129870000 Central Standard Time  
 _Time of the packet arrival at the destination_
 - **Epoch Time**: 1265236012.129870000  
-_Also called UNIX time, this is a number of seconds since January 1, 1970_
+_Also called UNIX time, this is the number of seconds since January 1, 1970_
 - **Frame Number**: 3  
 _Packet number in this capture_
 - **Frame Length**: 86 bytes (688 bits)  
@@ -246,7 +246,7 @@ As we can see, there is plenty of information about the packets that we can acce
 
 #### Sorting Columns
 
-Let's look back at where we started: the _Packet Listing_ window. We saw all the standard columns like **Number** or **Protocol**. But what if we want to sort captured packets by something else? For example the **Destination Port**? 
+Let's look back at where we started: the _Packet Listing_ window. We saw all the standard columns like **Number** or **Protocol**. But what if we want to sort captured packets by something else? For example, the **Destination Port**? 
 
 This is actually fairly simple. All we have to do is select any packet that contains the desired field, just like our DNS query packet #3, right click the **Destination Port** field (in our case), and select `Apply as a Column`. We can also use the `Ctrl + Shift + I` once the field has been highlighted.
 
@@ -266,7 +266,7 @@ Let's look at the basic syntax.
 - To only display packets containing a specific protocol - just type in that protocol.  
 _For example, `http`_  
 
-- To filter them out further - type in that protocol, period, and further filterign options.  
+- To filter them out further - type in that protocol, period, and further filtering options.  
 _For example, to only show the http responses - type in `http.response`_  
 
 - To compare values - use the comparison operators. Wireshark supports both C-like and English syntax for them.  
