@@ -69,7 +69,7 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 
 
-## Basic Packet Analysis and Filtering in Wireshark
+## Basic Packet Analysis, Sorting, and Filtering in Wireshark
 
 ### The Tip of The Iceberg
 
@@ -79,7 +79,7 @@ Packets (also referred to as frames) contain a large amount of information, so i
 _Screenshot of the Packet Listing window_  
 
 We will be analyzing packet #3.
-Just by looking at all the columns that correspond to our packet (row), we can gather the following information:
+Just by looking at all the sorting columns that correspond to our packet (row), we can gather the following information:
 
 - **Number**: 3  
 _The number of the packet in the capture file_
@@ -184,13 +184,21 @@ _Number of answers_
 - **Queries**: www.offensive-security.com: type A, class IN  
 _All requests included in this packet. In our case, we only have one_  
 
-As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet in the _Packet Listing_ window and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - filtering.
+As we can see, there is plenty of information about the packets that we can access with Wireshark. All the things we were able to tell about the DNS query packet #3 is visible by just clicking on the packet in the _Packet Listing_ window and paying close attention to the fields. However, this is a single packet. What if we want to search through hundreds of packets to find something specific? This is where our next topic comes in - sorting and filtering.
 
-### Filtering
+### Sorting and Filtering
+
+#### Sorting Columns
+
+Let's look back at where we started: the _Packet Listing_ window. We saw all the standard columns like **Number** or **Protocol**. But what if we want to sort captured packets by something else? For example the **Destination Port**? 
+
+This is actually fairly simple. All we have to do is select any packet that contains the desired field, just like our DNS query packet #3, right click the **Destination Port** field (in our case), and select `Apply as a Column`. We can also use the `Ctrl + Shift + I` once the field has been highlighted.
+
+Now we should be able to see the newly added sorting column next to all the standard ones.
 
 #### Display Filter
 
-The easiest way to filter the packets is by using Wireshark's _Display Filter_ that is located right under the _Command Menu_.
+The easiest way to filter the packets is by using Wireshark's _Display Filter_ that is located right under the _Command Menu_.  
 
 ![Display Filter](display-filter.png)  
 _Screenshot of the Command Menu and the Display Filter_  
@@ -211,7 +219,7 @@ _For example, to only show packets with the source IP address 10.0.0.2 - type in
 - To combine expressions - use the logical operators. Wireshark supports both C-like and English syntax for them.  
 _For example, to only show packets with the source IP address 10.0.0.2 or the source IP address 10.0.0.132 - type in `ip.src == 10.0.0.2 || ip.src == 10.0.0.132` or `ip.src eq 10.0.0.2 or ip.src eq 10.0.0.132`_  
 
-For more detailed explanation and extra content check out the [Wireshark's User Guide on Building Display Filter Expressions](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html).
+For more detailed explanation and extra content check out the [Wireshark's User Guide on Building Display Filter Expressions](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html).  
 
 ## Advanced Packet Analysis in Wireshark
 
