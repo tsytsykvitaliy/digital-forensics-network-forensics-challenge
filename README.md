@@ -71,7 +71,9 @@ Once we have the basics down, we'll lastly take a look at some more advanced top
 
 ## Basic Packet Analysis, Sorting, and Filtering in Wireshark
 
-### The Tip of The Iceberg
+### Packet Analysis
+
+#### The Tip of The Iceberg
 
 Packets (also referred to as frames) contain a large amount of information, so it's always best to start with what we can see easily. Let's take a look at the _Packet Listing_ window and gather the information from there first. We are going to use `Basics.pcap` in this section.
 
@@ -98,11 +100,11 @@ _Summary of the information in the highest layer protocol_
 
 This is the easiest way to see the most common information about the packets. However, there is much more that can be uncovered.
 
-### Digging Deeper
+#### Digging Deeper
 
 Glancing at the _Packet Listing_ is always nice, but it's rarely enough. If we want to learn more about the packet, we should click on it and explore the _Packet Details_. We have already discussed what information goes in each one of the layers (drop down rows) in the previous section so it will be easier to analyze our specific DNS packet, knowing that information. We will start from the top of the list with the physical layer, and work our way to the bottom - the "highest" protocol.
 
-#### Physical Layer
+##### Physical Layer
 
 ![](physical.png)  
 _Screenshot of the physical layer information we have about the DNS packet._  
@@ -120,7 +122,7 @@ _Packet length_
 - **Protocols in frame**: eth:ethertype:ip:udp:dns  
 _All protocols used by the packet (by layer)_  
 
-#### Data Link Layer
+##### Data Link Layer
 
 ![](data-link.png)  
 _Screenshot of the data link layer information we have about the DNS packet._  
@@ -132,7 +134,7 @@ _Source MAC address_
 - **Type**: IPv4 (0x0800)  
 _Indicates which upper layer protocol should be used_  
 
-#### Network Layer
+##### Network Layer
 
 ![](network.png)  
 _Screenshot of the network layer information we have about the DNS packet._  
@@ -154,7 +156,7 @@ _An IPv4 address of the system that sent the packet_
 - **Destination**: 10.0.0.2  
 _An IPv4 address of the system that received the packet_
 
-#### Transport Layer
+##### Transport Layer
 
 ![](transport.png)  
 _Screenshot of the transport layer information we have about the DNS packet._  
@@ -168,7 +170,7 @@ _Length of the UDP packet (8 bytes - the header, the rest - data)_
 - **Checksum**: 0x2d94 \[unverified]  
 _The checksum value and its verification status_  
 
-#### Application Layer
+##### Application Layer
 
 ![](dns.png)  
 _Screenshot of the application layer information we have about the DNS packet._  
