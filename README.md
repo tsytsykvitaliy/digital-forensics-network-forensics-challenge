@@ -188,6 +188,26 @@ As we can see, there is plenty of information about the packets that we can acce
 
 ### Filtering
 
+#### Display Filter
+
+The easiest way to filter the packets is by using Wireshark's _Display Filter_ that is located right under the _Command Menu_. _Display Filter_ doesn't quite work the way `Ctrl + F` does on the web pages, so it's important to understand the correct way to build the expressions.
+
+Let's look at the basic syntax.  
+
+- To only display packets containing a specific protocol - just type in that protocol.  
+_For example, `http`_  
+
+- To filter them out further - type in that protocol, period, and further filterign options.  
+_For example, to only show the http responses - type in `http.response`_  
+
+- To compare values - use the comparison operators. Wireshark supports both C-like and English syntax for them.  
+_For example, to only show packets with the source IP address 10.0.0.2 - type in `ip.src == 10.0.0.2` or `ip.src eq 10.0.0.2`_  
+
+- To combine expressions - use the logical operators. Wireshark supports both C-like and English syntax for them.  
+_For example, to only show packets with the source IP address 10.0.0.2 or the source IP address 10.0.0.132 - type in `ip.src == 10.0.0.2 || ip.src == 10.0.0.132` or `ip.src eq 10.0.0.2 or ip.src eq 10.0.0.132`_  
+
+For more detailed explanation and extra content check out the [Wireshark's User Guide on Building Display Filter Expressions](https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html).
+
 ## Advanced Packet Analysis in Wireshark
 
 
