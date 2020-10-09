@@ -192,8 +192,8 @@ As we can see, there is plenty of information about the packets that we can acce
 
 The easiest way to filter the packets is by using Wireshark's _Display Filter_ that is located right under the _Command Menu_.
 
-![Display Filter](display-filter.png)
-_Screenshot of the Command Menu and the Display Filter_
+![Display Filter](display-filter.png)  
+_Screenshot of the Command Menu and the Display Filter_  
 
 _Display Filter_ doesn't quite work the way `Ctrl + F` does on the web pages, so it's important to understand the correct way to build the expressions.
 
