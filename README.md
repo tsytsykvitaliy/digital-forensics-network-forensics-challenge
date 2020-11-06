@@ -1,5 +1,7 @@
 # Digital Forensics Network Forensics Challenge
 ## Created by: Tom Danner, Devin Ingresoll, Jesse Reed, Vitaliy Tsytsyk
+### About the Authors
+`insert pics`
 
 ### Software/Tools Used:
 <p align="center">
@@ -544,6 +546,61 @@ TShark offers a wide variety of services as well as offering a lot of customizat
 
 
 ## References
-(Work in progress)
+
+(Network Forensics)
+https://en.wikipedia.org/wiki/Network_forensics
+
+(Intro to Wireshark)
+https://medium.com/better-programming/intro-to-wireshark-2abe7fb24f53
+
+(What is Wireshark)
+https://ctf101.org/forensics/what-is-wireshark/
+
+(TCP)
+https://en.wikipedia.org/wiki/Transmission_Control_Protocol
+
+(TCP/IP Packets)
+https://inc0x0.com/tcp-ip-packets-introduction/tcp-ip-packets-3-manually-create-and-send-raw-tcp-ip-packets/
+
+(TCP/IP Packets)
+https://inc0x0.com/tcp-ip-packets-introduction/tcp-ip-packets-2-analysis-of-a-raw-tcp-ip-packet/
+
+(For Installation)
+https://www.wireshark.org/docs/wsug_html_chunked/
+
+(For PCAPS)
+https://nationalcyberleague.org/
+
+(For RTP/RTCP)
+https://tools.ietf.org/html/rfc3550
+
+(For Sips)
+https://www.unicoi.com/fusion_secure/fusion_sips.htm
+
+(TShark [Terminal Based Wireshark])
 https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html
+
+(Script Packets)
 https://tshark.dev/packetcraft/scripting/scripted_gen/#bash-various
+
+(TShark Info)
+https://www.wireshark.org/docs/man-pages/tshark.html
+
+(Tcpdump Info)
+https://www.tcpdump.org/
+
+(Wireshark)
+https://www.wireshark.org/docs/wsug_html_chunked/
+
+(Wireshark Wiki)
+https://wiki.wireshark.org/
+
+(PCAP Files)
+https://cyberskyline.com/
+
+
+
+
+
+
+
