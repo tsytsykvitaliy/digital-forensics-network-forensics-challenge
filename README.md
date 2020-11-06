@@ -535,7 +535,7 @@ https://en.wikipedia.org/wiki/Network_forensics
 (Intro to wireshark)
 https://medium.com/better-programming/intro-to-wireshark-2abe7fb24f53
 
-(What is wireshark)
+(What is wireshark?)
 https://ctf101.org/forensics/what-is-wireshark/
 
 (TCP)
@@ -565,7 +565,12 @@ https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html
 (Script Packets)
 https://tshark.dev/packetcraft/scripting/scripted_gen/#bash-various
 
-(TShark info)
+(TShark Info)
 https://www.wireshark.org/docs/man-pages/tshark.html
+
+(tcpdump Info)
+https://www.tcpdump.org/
+
+
 
 
