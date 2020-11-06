@@ -330,15 +330,18 @@ Extracting files and analyzing VoIP calls are just a couple of advanced ways you
 
 
 ## An Overview/Introduction to TShark
-TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. It supports the same options as Wireshak and without having any options set, TShark works in a similar way as a tcpdump. For more information on Wireshark consult your local manual page (`man shark`) or the online version at (https://www.wireshark.org/docs/man-pages/tshark.html).
+TShark is the terminal oriented version of Wireshark that can capture and display packets without the need for an interactive user interface. It supports the same options as Wireshak and without having any options set, TShark works in a similar way as a tcpdump. Tcpdump is a packet analyzer that executes in the command line. It allows the user to display TCP/IP packets being transmitted or received over a network that the computer is connected to. For more information on Wireshark consult your local manual page (`man shark`) or the online version at (https://www.wireshark.org/docs/man-pages/tshark.html).
 
 ### Help information available from `tshark`
 
-`TShark (Wireshark) 3.3.2 (v3.3.2rc0-16-g1936fef77a42)
+```
+
+TShark (Wireshark) 3.3.2 (v3.3.2rc0-16-g1936fef77a42)
 Dump and analyze network traffic.
-See https://www.wireshark.org for more information. 
+See https://www.wireshark.org for more information.
 
 Usage: tshark [options] ...
+
 
 Capture interface:
   -i <interface>, --interface <interface>
@@ -358,7 +361,8 @@ Capture interface:
   -L, --list-data-link-types
                            print list of link-layer types of iface and exit
   --list-time-stamp-types  print list of timestamp types for iface and exit
-
+  
+  
 Capture stop conditions:
   -c <packet count>        stop after n packets (def: infinite)
   -a <autostop cond.> ..., --autostop <autostop cond.> ...
@@ -366,6 +370,7 @@ Capture stop conditions:
                            filesize:NUM - stop this file after NUM KB
                               files:NUM - stop after NUM files
                             packets:NUM - stop after NUM packets
+                            
 Capture output:
   -b <ringbuffer opt.> ..., --ring-buffer <ringbuffer opt.>
                            duration:NUM - switch to next file after NUM secs
@@ -374,6 +379,7 @@ Capture output:
                             packets:NUM - switch to next file after NUM packets
                            interval:NUM - switch to next file when the time is
                                           an exact multiple of NUM secs
+                                          
 Input file:
   -r <infile>, --read-file <infile>
                            set the filename to read from (or '-' for stdin)
@@ -402,6 +408,7 @@ Processing:
                            enable dissection of heuristic protocol
   --disable-heuristic <short_name>
                            disable dissection of heuristic protocol
+                           
 Output:
   -w <outfile|->           write packets to a pcapng-format file named "outfile"
                            (or '-' for stdout)
@@ -426,7 +433,7 @@ Output:
   -e <field>               field to print if -Tfields selected (e.g. tcp.port,
                            _ws.col.Info)
                            this option can be repeated to print multiple fields
-  -E<fieldsoption>=<value> set options for output when -Tfields selected:
+  -E <fieldsoption>=<value> set options for output when -Tfields selected:
      bom=y|n               print a UTF-8 BOM
      header=y|n            switch headers on and off
      separator=/t|/s|<char> select tab, space, printable character as separator
@@ -460,13 +467,16 @@ Output:
                            specified protocols within the mapping file
 
 Miscellaneous:
+
   -h, --help               display this help and exit
   -v, --version            display version info and exit
   -o <name>:<value> ...    override preference setting
   -K <keytab>              keytab file to use for kerberos decryption
   -G [report]              dump one of several available reports and exit
                            default report="fields"
-                           use "-G help" for more help`
+                           use "-G help" for more help
+                           
+ ```
 
 
 
@@ -485,27 +495,30 @@ With having some basics covered, we may now get into some scripts written within
 
 ### BASH
 
-`function save_ping() {
+```
+function save_ping() {
     tshark -w ping.pcap -f "host 8.8.8.8" -c 1
     ping 8.8.8.8 -c 1
 }
 save_ping
-`
+```
 The script above generates traffic with netcat, ping, hping, etc. and saves it with tshark.
 
 ### Python
-
-`# send_ping.py
+```
+# send_ping.py
 from scapy.all import *
 ans, unans = sr(IP(dst="8.8.8.8")/ICMP()/"Scapy is easy!")
-# Write the ping and its reply to a file
-wrpcap("ping.pcap",ans+unans)`
+```
+#### Write the ping and its reply to a file
+```wrpcap("ping.pcap",ans+unans)```
 
-If you want to live-capture with scapy [it should be possible]](/capture/sources/downloading_file#scapy) on systems with tail
 
-# Ruby
+If you want to live-capture with scapy [it should be possible]]```(/capture/sources/downloading_file#scapy)``` on systems with tail.
 
-`send_ping.rb
+### Ruby
+```
+send_ping.rb
 require 'packetfu'
 
 Using :config prepoulates eth_src, eth_dst, and ip_src with system values.
@@ -515,12 +528,13 @@ icmp_pkt.icmp_code = 0
 icmp_pkt.payload = "PacketFu is easy!"
 icmp_pkt.ip_daddr="8.8.8.8"
 icmp_pkt.recalc
+```
 
-icmp_pkt.to_w`
-Write the generated ping to a file
-`icmp_pkt.to_f("ping.pcap")`
+#### Write the generated ping to a file.
+```icmp_pkt.to_w```
 
-This script above will send a ping to the wire. 
+#### Send a ping to the wire.
+```icmp_pkt.to_f("ping.pcap")```
 
 TShark offers a wide variety of services as well as offering a lot of customization to help the user better navigate the program. 
 
