@@ -495,6 +495,7 @@ With having some basics covered, we may now get into some scripts written within
 
 ### BASH
 
+#### Generates traffic with netcat, ping, hping, etc. It then saves it with tshark.
 ```
 function save_ping() {
     tshark -w ping.pcap -f "host 8.8.8.8" -c 1
@@ -502,21 +503,24 @@ function save_ping() {
 }
 save_ping
 ```
-The script above generates traffic with netcat, ping, hping, etc. and saves it with tshark.
 
 ### Python
+
+#### Sends a ping to a specific IP address
 ```
 # send_ping.py
 from scapy.all import *
 ans, unans = sr(IP(dst="8.8.8.8")/ICMP()/"Scapy is easy!")
 ```
-#### Write the ping and its reply to a file
+#### Writes the ping and its reply to a file
 ```wrpcap("ping.pcap",ans+unans)```
 
 
-If you want to live-capture with scapy [it should be possible]]```(/capture/sources/downloading_file#scapy)``` on systems with tail.
+If you want to live-capture with scapy [it should be possible]```(/capture/sources/downloading_file#scapy)``` on systems with tail.
 
 ### Ruby
+
+#### Script sends a ping to the wire
 ```
 send_ping.rb
 require 'packetfu'
@@ -530,7 +534,7 @@ icmp_pkt.ip_daddr="8.8.8.8"
 icmp_pkt.recalc
 ```
 
-#### Write the generated ping to a file.
+#### Writes the generated ping to a file.
 ```icmp_pkt.to_w```
 
 #### Send a ping to the wire.
