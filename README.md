@@ -1,6 +1,6 @@
 # Digital Forensics Network Forensics Challenge
 ## Created by: Tom Danner, Devin Ingresoll, Jesse Reed, Vitaliy Tsytsyk
-### The Authors
+### The Authors:
 <p align="center">
   <img src="https://github.com/tsytsykvitaliy/digital-forensics-network-forensics-challenge/blob/TomDanner16-patch-2/boomerbell.jpg" width="800" height="600" />
 </p>
