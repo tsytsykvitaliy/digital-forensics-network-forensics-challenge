@@ -148,7 +148,7 @@ We will be analyzing packet #3.
 Just by looking at all the sorting columns that correspond to our packet (row), we can gather the following information:
 
 - **Number**: 3  
-_The number of the packet in the capture file_
+_The packet's number in the current capture file_
 - **Time**: 0.000041  
 _Absolute time since the beginning of the capture (in seconds)_
 - **Source**: 10.0.0.132  
