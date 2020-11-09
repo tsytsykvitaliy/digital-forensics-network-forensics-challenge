@@ -56,7 +56,7 @@ Linux: By default it is included when installing Wireshark. Refer to the Wiresha
 
 ### Topics Covered:
 1. TCP/IP packet structure. An Overview/Introduction to Wireshark.
-2. Basic Packet Analysis in Wireshark.
+2. Basic Packet Analysis, Sorting, and Filtering in Wireshark.
 3. Advanced Packet Analysis in Wireshark.
 4. An Overview/Introduction to TShark.
 
