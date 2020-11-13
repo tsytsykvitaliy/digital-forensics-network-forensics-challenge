@@ -610,6 +610,7 @@ https://cyberskyline.com/
 https://tshark.dev/
 
 
-
+## Video Links
+[Networking Part 1 - TCP/IP packet structure & Overview/Introduction to Wireshark](https://app.vidgrid.com/view/qWYvPIgPth4j)
 
 
