@@ -611,9 +611,8 @@ https://tshark.dev/
 
 
 ## Video Links
-[TCP/IP packet structure & Overview/Introduction to Wireshark](https://app.vidgrid.com/view/qWYvPIgPth4j)
-[Basic Packet Analysis, Sorting, and Filtering in Wireshark](https://youtu.be/QX1lGAgj8uI)
-[Advanced Packet Analysis in Wireshark](https://app.vidgrid.com/view/qWYvPIgPth4j)
-
+1. [TCP/IP packet structure & Overview/Introduction to Wireshark](https://app.vidgrid.com/view/qWYvPIgPth4j)  
+2. [Basic Packet Analysis, Sorting, and Filtering in Wireshark](https://youtu.be/QX1lGAgj8uI)  
+3. [Advanced Packet Analysis in Wireshark](https://app.vidgrid.com/view/qWYvPIgPth4j)  
 
 
