@@ -65,7 +65,7 @@ Network Forensics is a crucial part of digital forensics and its importance cont
 Almost all personal computers and servers are going to have built-in networking capabilities, such as wi-fi or ethernet, allowing them to communicate with other devices across the internet.
 These connections can be used to transfer illegal files, deny normal service, and allow malware to go on and become viral.                                                                                                                                                           
 
-Network data can also be difficult to track due to the huge volume and voliticity of conversations between devices.                                                                                                                                                                      
+Network data can also be difficult to track due to the huge volume and volatility of conversations between devices.                                                                                                                                                                      
 As a result of this, networking data has to be deliberatly listened to and saved for analysis in order to extract evidence. This is called "sniffing."                                                                                                                                                                
 
 In our overview of network forensics we will first cover the most common language that computers communicate with: the TCP/IP packet structure.                                                                                                                              
